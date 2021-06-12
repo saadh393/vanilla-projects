@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: #e9f3fe;
+}
+
+.upload-container {
+  width: 500px;
+  height: auto;
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 7px 20px 0 rgb(0 0 0 / 10%);
+}
+
+.preview-section {
+  display: flex;
+  gap: 15px;
+  flex-direction: column;
+  align-items: center;
+  border: 3px dashed rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.preview-section h3 {
+  color: #386592;
+  font-weight: 500;
+}
+
+.preview-section p {
+  color: #c5d2e0;
+  font-size: 15px;
+}
+
+.preview-section input {
+  visibility: hidden;
+}
+
+.preview-section img {
+  width: 100px;
+}
+
+.upload-progress {
+  width: 100%;
+  height: 80px;
+  position: relative;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+
+.upload-progress .progress {
+  height: 100%;
+  width: 50%;
+  background-color: hsl(250, 60%, 98%);
+  position: absolute;
+  border-radius: 8px;
+  top: 0;
+  z-index: 0;
+  transition: width 0.1s ease-in;
+}
+
+.infoAndAction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.8rem 0.8rem;
+  border: 2px solid #f1f6fb;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.right img {
+  width: 28px;
+}
+
+.infoAndAction h3 {
+  color: #386592;
+}
+
+.infoAndAction p {
+  color: hsl(211, 30%, 63%);
+  font-size: 15px;
+}
