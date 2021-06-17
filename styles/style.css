@@ -5,11 +5,13 @@
   box-sizing: border-box;
   color : #fff;  
   font-family: 'Montserrat', sans-serif;
+  background: black;
 }
 
 body {
   height: 100vh;
   background: black;
+  overflow: hidden;
 }
 
 nav{
@@ -38,7 +40,7 @@ nav{
 }
 
 main{
-  height: 80vh;
+  height: 85vh;
   width: 100%;
   display: grid;
   place-items: center;
@@ -47,12 +49,13 @@ main{
 .carousel {
   max-width: 900px;
   width: 100%;
-  height: 400px;
+height: 600px;
   position: relative;
   /* border: 1px solid red; */
   padding: 10px;
   overflow: hidden;
   padding: 2rem 1rem;
+
 }
 .zoom {
   z-index: 4;
@@ -61,12 +64,14 @@ main{
 }
 .carousel .item {
   width: 300px;
+  height: 400px;
   position: absolute;
   /* border: 1px solid blue; */
-  padding: 30px;
+  padding: 20px;
   left: -200px;
-  /* overflow: hidden; */
-  top: -50px
+  overflow: hidden;
+  background: black;
+  top: -10px
 }
 
 .item .content {
@@ -123,22 +128,91 @@ main{
    color: #919191;
 }
 
-/* .img1 {
-  left: 20%;
-  transform: translateX(-50%) scale(0.6);
-}
-
-.img2 {
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 22;
-}
-
-.img3 {
-  left: 80%;
-  transform: translateX(-50%) scale(0.6);
-} */
-
 .carousel .item img {
   width: 100%;
+}
+
+
+.actions{
+  position: absolute;
+  right: 25%;
+  bottom: 15%;
+}
+
+.actions button{
+  outline: none;
+  border: 1px solid rgb(34, 34, 34);
+  background: black;
+  width: 40px;
+  height: 40px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background .1s ease-in ;
+}
+.actions button:active{
+background: rgb(34, 34, 34);
+}
+
+.preloading{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 99;
+  background: black;
+  display: grid;
+  place-items: center;
+  animation: preloadAnim .5s ease-in-out 5s forwards
+}
+
+@keyframes preloadAnim {
+  to{
+    width: 200px;
+    height: 100px;
+    right: 50px;
+    bottom: 20px;
+    background: transparent;
+  }
+}
+
+#signature{
+  width: 200px;
+  
+}
+
+#path1{
+    stroke-width: 5px;
+  stroke-dasharray: 3145;
+  stroke-dashoffset: 3145;
+  animation : sign 15s ease forwards;
+  transition: animation 5s ease;
+
+}
+
+@keyframes sign {
+  to{
+    stroke-dashoffset: 0;
+  }
+}
+
+
+#borolox{
+  position: absolute;
+  left: 15%;
+  top: 45%;
+  transform: translatey(-50%);
+  font-size: 4rem;
+  font-weight: 700;
+  z-index: 5;
+  transition: left .8s ease-out;
+  background: black;
+}
+
+@media only screen and (max-width: 600px){
+#borolox{
+  top: 90%;
+  background: transparent;
+  font-size: 3rem;
+}
 }

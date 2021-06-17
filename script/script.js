@@ -1,6 +1,7 @@
 // const image = document.querySelectorAll(".item")
 const carouselItem = document.querySelectorAll(".carousel .item");
 const carousel = document.querySelector(".carousel");
+const borolox = document.querySelector("#borolox");
 
 
 let position = 0
@@ -8,6 +9,8 @@ let size = Math.floor(carousel.offsetWidth / 2.5);
 let index1, index2, index3, index4;
 
 // console.log(counter, index2);
+
+
 
 
 init();
@@ -19,61 +22,65 @@ function init(firstTime = true) {
     
     const newSize = firstTime ? size * index : size * index - size * position;
     if (newSize === size) {
-      image.style.transform = `translate(${newSize + 100}px, 10px) scale(1.1)`;
-      image.style.cssText = `
-          margin:2rem;
-          margin-left : 0;
-          z-index : 2;
-          opacity : 1;
-          transform : translate(${newSize + 100}px, 10px) scale(1);
-          border : 4px solid blue;
-
-      `
+      image.style.transform = `translate(${newSize + 100}px, 20%) scale(1.2)`;
+      image.style.opacity = "1";
       // image.style.margin = "2rem";
-      // image.style.marginLeft = "0rem";
-      // image.style.zIndex = "2"
-      // image.style.opacity = "1";
+      image.style.marginLeft = "0"
+      image.style.zIndex = "2";
+      image.style.border = "4px solid blue" 
+
       image.lastElementChild.classList.add('showContent')
-      // addContent(image);
 
     } else {
-      // removeContent(image);
       image.style.transform = `translate(${newSize + 100}px, 10px) scale(.8)`;
-      image.style.opacity = ".2";
+      image.style.opacity = ".4";
       image.style.margin = "0rem";
       image.style.zIndex = "1";
+
     }
   })
 
 }
 
 function next() {
-  anim();
   if (position == 2) {
     return;
   }
+  anim();
   removeContent(position)
   position++
   init(false)
+
+  if (position === 1) {
+    borolox.style.left = "3%"
+    borolox.style.opacity = ".5"
+    borolox.style.background = "transparent"
+    borolox.style.transition = "left .5s ease"
+  }
   
 }
 
 function previous() {
-  anim();
   if (position == 0) {
     return;
   }
+  anim();
   removeContent(position)
   position--;
   init(false);
+
+  if (position === 0) {
+    borolox.style.left = "15%"
+    borolox.style.opacity = "1"
+    borolox.style.background = "black"
+    borolox.style.transition = "left .6s ease .25s, background .6s ease .25s"
+  }
 }
 
 function addContent(el) {
   const div = document.createElement('div');
   div.className = "content";
-  div.innerHTML = `
-  <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tempora!</h3>
-  `;
+  div.innerHTML = `<h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, tempora!</h3>`;
   el.appendChild(div);
 }
 
@@ -89,6 +96,6 @@ function removeContent(pos) {
 
 function anim() {
   carouselItem.forEach((item) => {
-    item.style.transition = ".3s ease-in-out";
+    item.style.cssText = "transition : .6s ease-in-out";
   });
 }
