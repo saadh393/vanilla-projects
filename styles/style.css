@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300,400,500,700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color : #fff;  
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: black;
+}
+
+nav{
+  width: 80%;
+  height: 80px;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.brand{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.menus ul{
+  list-style: none;
+  display: flex;
+}
+
+.menus ul li{
+  padding: 1rem 1rem;
+  cursor: pointer;
+}
+
+main{
+  height: 80vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.carousel {
+  max-width: 900px;
+  width: 100%;
+  height: 400px;
+  position: relative;
+  /* border: 1px solid red; */
+  padding: 10px;
+  overflow: hidden;
+  padding: 2rem 1rem;
+}
+.zoom {
+  z-index: 4;
+  border: 10px solid salmon;
+  margin-top: 40px;
+}
+.carousel .item {
+  width: 300px;
+  position: absolute;
+  /* border: 1px solid blue; */
+  padding: 30px;
+  left: -200px;
+  /* overflow: hidden; */
+  top: -50px
+}
+
+.item .content {
+  width: 100%;
+  height: 50px;
+  padding: 5px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+  position: relative;
+  bottom: 50px;
+  z-index: 6;
+  transition: top 02s ease-in;
+  opacity: 0;
+}
+
+.showContent {
+   animation: contentAnimaion 0.5s forwards ease-in-out;
+}
+
+@keyframes contentAnimaion {
+  from {
+    top: 0px;
+    opacity: 0;
+  }
+  to {
+    top: -50px;
+    opacity: 1;
+  }
+}
+
+.hideContent{
+  animation: hideAnimaion 0.3s forwards ease-in-out;
+}
+
+@keyframes hideAnimaion {
+  from {
+    top: -50px;
+    opacity: 1;
+  }
+  to {
+    top: 0px;
+    opacity: 0;
+  }
+  
+}
+
+.content h3 {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.content p{
+  font-weight: 500;
+   font-size: 14px;
+   color: #919191;
+}
+
+/* .img1 {
+  left: 20%;
+  transform: translateX(-50%) scale(0.6);
+}
+
+.img2 {
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 22;
+}
+
+.img3 {
+  left: 80%;
+  transform: translateX(-50%) scale(0.6);
+} */
+
+.carousel .item img {
+  width: 100%;
+}

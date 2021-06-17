@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vanilla Carousel</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="brand">
+        MOMENTUM
+      </div>
+      <div class="menus">
+        <ul>
+          <li>Home</li>
+          <li>Work</li>
+          <li>About</li>
+          <li>Contact</li>
+        </ul>
+      </div>
+    </nav>
+    
+    <main>
+      <div class="carousel">
+      <div class="frame"></div>
+      
+      <div class="item" id="img1">
+        <img src="./images/zuck.jpg" alt="" srcset="" />
+        <div class="content">
+          <h3>Mark Zuckerberg</h3>
+          <p>CEO of Facebook</p>
+        </div>
+      </div>
+
+      <div class="item" id="img2">
+        <img src="./images/musk.jpg" alt="" srcset="" />
+         <div class="content">
+           <h3>Elon Musk</h3>
+          <p>CEO of Tesla</p>
+        </div>
+      </div>
+
+      <div class="item" id="img3">
+        <img src="./images/bill.jpg" alt="" srcset="" />
+         <div class="content">
+           <h3>Bill Gates</h3>
+          <p>American business magnate</p>
+        </div>
+      </div>
+
+     
+    </div>
+
+   <div class="actions">
+      <button onclick="next()">Next</button>
+    <button onclick="previous()">Previous</button>
+   </div>
+    </main>
+
+    <script src="./script/script.js"></script>
+  </body>
+</html>
