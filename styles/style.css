@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300,400,500,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300,400,500,700&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  color : #fff;  
-  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
   background: black;
 }
 
@@ -14,32 +14,32 @@ body {
   overflow: hidden;
 }
 
-nav{
+nav {
   width: 80%;
   height: 80px;
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
   align-items: center;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 
-.brand{
+.brand {
   font-size: 20px;
   font-weight: bold;
 }
 
-.menus ul{
+.menus ul {
   list-style: none;
   display: flex;
 }
 
-.menus ul li{
+.menus ul li {
   padding: 1rem 1rem;
   cursor: pointer;
 }
 
-main{
+main {
   height: 85vh;
   width: 100%;
   display: grid;
@@ -49,13 +49,12 @@ main{
 .carousel {
   max-width: 900px;
   width: 100%;
-height: 600px;
+  height: 600px;
   position: relative;
   /* border: 1px solid red; */
   padding: 10px;
   overflow: hidden;
   padding: 2rem 1rem;
-
 }
 .zoom {
   z-index: 4;
@@ -71,7 +70,7 @@ height: 600px;
   left: -200px;
   overflow: hidden;
   background: black;
-  top: -10px
+  top: -10px;
 }
 
 .item .content {
@@ -87,7 +86,7 @@ height: 600px;
 }
 
 .showContent {
-   animation: contentAnimaion 0.5s forwards ease-in-out;
+  animation: contentAnimaion 0.5s forwards ease-in-out;
 }
 
 @keyframes contentAnimaion {
@@ -101,7 +100,7 @@ height: 600px;
   }
 }
 
-.hideContent{
+.hideContent {
   animation: hideAnimaion 0.3s forwards ease-in-out;
 }
 
@@ -114,7 +113,6 @@ height: 600px;
     top: 0px;
     opacity: 0;
   }
-  
 }
 
 .content h3 {
@@ -122,24 +120,23 @@ height: 600px;
   font-size: 20px;
 }
 
-.content p{
+.content p {
   font-weight: 500;
-   font-size: 14px;
-   color: #919191;
+  font-size: 14px;
+  color: #919191;
 }
 
 .carousel .item img {
   width: 100%;
 }
 
-
-.actions{
+.actions {
   position: absolute;
   right: 25%;
   bottom: 15%;
 }
 
-.actions button{
+.actions button {
   outline: none;
   border: 1px solid rgb(34, 34, 34);
   background: black;
@@ -147,13 +144,13 @@ height: 600px;
   height: 40px;
   border-radius: 3px;
   cursor: pointer;
-  transition: background .1s ease-in ;
+  transition: background 0.1s ease-in;
 }
-.actions button:active{
-background: rgb(34, 34, 34);
+.actions button:active {
+  background: rgb(34, 34, 34);
 }
 
-.preloading{
+.preloading {
   width: 100%;
   height: 100%;
   position: absolute;
@@ -163,11 +160,11 @@ background: rgb(34, 34, 34);
   background: black;
   display: grid;
   place-items: center;
-  animation: preloadAnim .5s ease-in-out 5s forwards
+  animation: preloadAnim 0.5s ease-in-out 5s forwards;
 }
 
 @keyframes preloadAnim {
-  to{
+  to {
     width: 200px;
     height: 100px;
     right: 50px;
@@ -176,28 +173,25 @@ background: rgb(34, 34, 34);
   }
 }
 
-#signature{
+#signature {
   width: 200px;
-  
 }
 
-#path1{
-    stroke-width: 5px;
+#path1 {
+  stroke-width: 5px;
   stroke-dasharray: 3145;
   stroke-dashoffset: 3145;
-  animation : sign 15s ease forwards;
+  animation: sign 15s ease forwards;
   transition: animation 5s ease;
-
 }
 
 @keyframes sign {
-  to{
+  to {
     stroke-dashoffset: 0;
   }
 }
 
-
-#borolox{
+#borolox {
   position: absolute;
   left: 15%;
   top: 45%;
@@ -205,14 +199,14 @@ background: rgb(34, 34, 34);
   font-size: 4rem;
   font-weight: 700;
   z-index: 5;
-  transition: left .8s ease-out;
+  transition: left 0.8s ease-out;
   background: black;
 }
 
-@media only screen and (max-width: 600px){
-#borolox{
-  top: 90%;
-  background: transparent;
-  font-size: 3rem;
-}
+@media only screen and (max-width: 600px) {
+  #borolox {
+    top: 90%;
+    background: transparent;
+    font-size: 3rem;
+  }
 }
