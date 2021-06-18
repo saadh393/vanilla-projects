@@ -1,19 +1,57 @@
-// const image = document.querySelectorAll(".item")
-const carouselItem = document.querySelectorAll(".carousel .item");
+
 const carousel = document.querySelector(".carousel");
 const borolox = document.querySelector("#borolox");
+let contentToinject = ""
+
+const data = [
+  {
+    name: "Mark Zuckerberg",
+    designation: "CEO of Facebook",
+    photo : './images/zuck.jpg'
+  },
+  {
+    name: "Elon Musk",
+    designation: "CEO of Tesla",
+    photo : './images/musk.jpg'
+  },
+  {
+    name: "Bill Gates",
+    designation: "American Business Mgnate",
+    photo : './images/bill.jpg'
+  },
+  {
+    name: "Jack Ma",
+    designation: "Chinese Business Magnate",
+    photo : './images/jackma.jpg'
+  }
+]
+renderImages()
 
 
+const carouselItem = document.querySelectorAll(".carousel .item");
 let position = 0
 let size = Math.floor(carousel.offsetWidth / 2.5);
 let index1, index2, index3, index4;
 
-// console.log(counter, index2);
-
-
-
-
 init();
+
+function renderImages() {
+  data.forEach(card => {
+    contentToinject += `
+    <div class="item">
+      <img src="${card.photo}" alt="${card.name}" srcset="" />
+      <div class="content">
+        <h3>${card.name}</h3>
+        <p>${card.designation}</p>
+      </div>
+    </div>
+    
+    `
+    console.log(contentToinject)
+  });
+  carousel.innerHTML = contentToinject
+
+}
 
 function init(firstTime = true) {
   
@@ -43,7 +81,7 @@ function init(firstTime = true) {
 }
 
 function next() {
-  if (position == 2) {
+  if (position == data.length -1) {
     return;
   }
   anim();
@@ -60,7 +98,7 @@ function next() {
   
 }
 
-function previous() {
+function previous(e) {
   if (position == 0) {
     return;
   }
