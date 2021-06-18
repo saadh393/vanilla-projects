@@ -1,95 +1,145 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
 }
 
 body {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  background-color: #e9f3fe;
+	height: 100vh;
+	display: grid;
+	place-items: center;
+	background-color: #e9f3fe;
 }
 
 .upload-container {
-  width: 500px;
-  height: auto;
-  background-color: #fff;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0px 7px 20px 0 rgb(0 0 0 / 10%);
+	width: 500px;
+	height: auto;
+	background-color: #fff;
+	padding: 2rem;
+	border-radius: 15px;
+	box-shadow: 0px 7px 20px 0 rgb(0 0 0 / 10%);
+	position: relative;
+	transition: height 1s ease-in-out;
 }
 
 .preview-section {
-  display: flex;
-  gap: 15px;
-  flex-direction: column;
-  align-items: center;
-  border: 3px dashed rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  padding: 1rem;
-  cursor: pointer;
+	display: flex;
+	gap: 15px;
+	flex-direction: column;
+	align-items: center;
+	border: 2px dashed rgba(0, 0, 0, 0.2);
+	border-radius: 15px;
+	padding: 1rem;
+	cursor: pointer;
+	transition: border 0.3s ease-out, transform 0.3s ease-out;
 }
 
-.preview-section h3 {
-  color: #386592;
-  font-weight: 500;
-}
-
-.preview-section p {
-  color: #c5d2e0;
-  font-size: 15px;
-}
-
-.preview-section input {
-  visibility: hidden;
+.preview-section:active {
+	border: 3px solid hsl(210, 45%, 80%);
 }
 
 .preview-section img {
-  width: 100px;
+	transition: transform 0.2s ease-in-out;
+	width: 100px;
+	position: relative;
+	z-index: 1;
+}
+.preview-section:active img,
+.dragEnter {
+	transform: scale(1.06) translateY(-10px);
+}
+
+.imageHolder {
+	position: relative;
+}
+
+.imageHolder .preImage {
+	left: 0;
+	z-index: 0;
+	position: absolute;
+	transform: scale(0.9);
+	transition: rotate 0.4s, translateX 0.4s, scale 0.4s ease-in;
+}
+
+.imageHolder #imgLeft {
+	transform: rotate(0) translateX(0) scale(0);
+	transition: transform 0.4s ease-out;
+}
+
+.imageHolder #imgRight {
+	transform: rotate(0) translateX(0) scale(0);
+	transition: transform 0.4s ease-out;
+	/* transform: rotate(-10deg) translateX(-40px) scale(0.8); */
+}
+
+.preview-section h3 {
+	color: #125aac;
+	font-weight: 600;
+}
+
+.preview-section p {
+	color: #c5d2e0;
+	font-size: 15px;
+}
+
+.preview-section input {
+	visibility: hidden;
 }
 
 .upload-progress {
-  width: 100%;
-  height: 80px;
-  position: relative;
-  overflow: hidden;
-  margin: 1rem 0;
+	width: 100%;
+	height: 0;
+	position: relative;
+	overflow: hidden;
+	margin: 1rem 0;
+	/* transition: display 0.1s ease-in-out; */
+	background-color: #fff;
+	transform: translateY(100px) rotate(5deg);
+	opacity: 0;
+	transition: transform 0.6s, opacity 0.6s, height 0.5s ease-in-out;
 }
 
 .upload-progress .progress {
-  height: 100%;
-  width: 50%;
-  background-color: hsl(250, 60%, 98%);
-  position: absolute;
-  border-radius: 8px;
-  top: 0;
-  z-index: 0;
-  transition: width 0.1s ease-in;
+	height: 100%;
+	width: 0%;
+	background-color: hsl(250, 60%, 98%);
+	position: absolute;
+	border-radius: 8px;
+	top: 0;
+	z-index: 0;
+	transition: width 0.2s ease-in-out;
 }
 
 .infoAndAction {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.8rem 0.8rem;
-  border: 2px solid #f1f6fb;
-  border-radius: 8px;
-  position: relative;
-  z-index: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.8rem 0.8rem;
+	border: 2px solid #f1f6fb;
+	border-radius: 8px;
+	position: relative;
+	z-index: 1;
 }
 
 .right img {
-  width: 28px;
+	width: 28px;
 }
 
 .infoAndAction h3 {
-  color: #386592;
+	color: #386592;
+	font-size: 17px;
+	font-weight: 600;
 }
 
 .infoAndAction p {
-  color: hsl(211, 30%, 63%);
-  font-size: 15px;
+	color: hsl(211, 30%, 63%);
+	font-size: 15px;
+}
+
+@media only screen and (max-width: 600px) {
+	.upload-container {
+		width: 450px;
+	}
 }

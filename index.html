@@ -1,32 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Photo Uploader</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <div class="upload-container">
-      <div class="preview-section">
-        <input type="file" />
-        <img src="./images/jpg-file.svg" alt="" />
-        <h3>Drop Your Image Here, or Browse</h3>
-        <p>Supports : JPEG, JPG, PNG</p>
-      </div>
-      <div class="upload-progress">
-        <div class="progress"></div>
-        <div class="infoAndAction">
-          <div class="left">
-            <h3>Uploading...</h3>
-            <p>50% . 2 seconds left</p>
-          </div>
-          <div class="right">
-            <img src="./images/close.svg" />
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Image Uploader - Saad Hasan</title>
+		<meta property="og:title" content="Image Uploader - Saad Hasan" />
+		<meta
+			property="og:og:description"
+			content="Awesome Image Uploader with Vanilla Javascript without using any external library or plugin. This site is designed with only Raw HTML, CSS and Vanilla JavaScript."
+		/>
+		<meta
+			property="og:image"
+			content="https://raw.githubusercontent.com/saadh393/image-uploader/image-uploader/images/meta.png"
+		/>
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1920" />
+		<meta property="og:image:height" content="1080" />
+		<meta property="og:image:alt" content="Image Uploader - Saad Hasan" />
+
+		<link rel="stylesheet" href="./styles.css" />
+	</head>
+	<body>
+		<div class="upload-container" id="container">
+			<div class="preview-section" id="preview">
+				<input type="file" id="fileInput" />
+				<div class="imageHolder">
+					<img src="./images/jpg-file.svg" alt="" id="previewImage" />
+					<img src="./images/jpg-file.svg" alt="" class="preImage" id="imgLeft" />
+					<img src="./images/jpg-file.svg" alt="" class="preImage" id="imgRight" />
+				</div>
+				<h3>Drop Your Image Here, or Browse</h3>
+				<p>Supports : JPEG, JPG, PNG</p>
+			</div>
+			<div class="upload-progress" id="progressWraper">
+				<div class="progress" id="progress"></div>
+				<div class="infoAndAction">
+					<div class="left">
+						<h3>Uploading...</h3>
+						<p id="uploadingProgress">50% . 2 seconds left</p>
+					</div>
+					<div class="right">
+						<img src="./images/close.svg" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="./script.js"></script>
 </html>
