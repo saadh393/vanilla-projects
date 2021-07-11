@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Rich Text Editor - Saad Hasan</title>
+
+		<meta property="og:title" content="Rich Text Editor - Saad Hasan" />
+		<meta
+			property="og:og:description"
+			content="Awesome Rich Text Editor with Vanilla Javascript without using any external library or plugin. This site is designed with only Raw HTML, CSS, and Vanilla JavaScript."
+		/>
+		<meta property="og:image" content="./screenshort.png" />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1920" />
+		<meta property="og:image:height" content="1080" />
+		<meta property="og:image:alt" content="Rich Text Editor by Saad Hasan" />
+
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<link rel="stylesheet" href="./style/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="wrapper">
+				<h2>Rich Text Editor</h2>
+				<div class="richEditor">
+					<div class="toolbar">
+						<button class="material-icons" data-element="bold" title="bold">format_bold</button>
+						<button class="material-icons" data-element="underline" title="Underline">format_underline</button>
+						<button class="material-icons" data-element="italic" title="Italic">format_italic</button>
+						<button class="material-icons" data-element="justifyLeft" title="Align Left">format_align_left</button>
+						<button class="material-icons" data-element="justifyCenter" title="Align Center">
+							format_align_center
+						</button>
+						<button class="material-icons" data-element="justifyRight" title="Align Right">format_align_right</button>
+						<button class="material-icons" data-element="insertUnorderedList" title="Bullet List">
+							format_list_bulleted
+						</button>
+						<button class="material-icons" data-element="createLink" title="Link">link</button>
+						<button class="material-icons" data-element="insertImage" title="Attach Image">image</button>
+						<button class="material-icons" data-element="add" title="Increase Font Size">add</button>
+						<button class="material-icons" data-element="remove" title="Decrease Font Size">remove</button>
+					</div>
+					<div class="editor" contenteditable="true" data-gramm_editor="false"></div>
+					<button id="showCode">Show Code</button>
+				</div>
+			</div>
+		</div>
+
+		<div id="showCodeDialog">
+			<h2>Source Code</h2>
+			<code>
+				<p id="showCodeInput"></p>
+			</code>
+			<div class="btn">
+				<button id="copy"><span class="material-icons">content_copy</span> Copy</button>
+				<button id="close"><span class="material-icons">close</span> Close</button>
+			</div>
+		</div>
+
+		<section id="developer" class="inCircle">
+			<main>
+				<div class="profilePic">
+					<img src="https://github.com/saadh393.png?size=400" alt="Saad Hasan Software Developer from Bangladesh" />
+				</div>
+				<article>
+					<h1>Saad Hasan</h1>
+					<p class="subtitle">Junior Software Developer</p>
+					<p class="intro">
+						I am specialized in Frontend Development. My mission is to convert an idea into a real pixel-perfect
+						application.
+					</p>
+
+					<address class="mailButtons">
+						<a href="mailto:saadh3939@gmail.com" title="Saad Hasan's Email">saadh3939@gmail.com</a>
+					</address>
+
+					<div class="socialMedias">
+						<ul>
+							<!-- Linked in Profile Link -->
+							<a
+								href="https://www.linkedin.com/in/saadh393/"
+								title="Saad Hasan on Linkedin"
+								rel="nofollow"
+								target="_blank"
+								><img
+									src="https://raw.githubusercontent.com/saadh393/saadh393/main/svg/linkedin.svg"
+									alt="Software Developer Saad Hasan on Linkedin"
+									title="Saad Hasan on Linkedin"
+									style="max-width: 100%"
+							/></a>
+
+							<!-- Github Profile Link -->
+							<a href="https://github.com/saadh393" title="Saad Hasan on Github" rel="nofollow" target="_blank"
+								><img
+									src="https://raw.githubusercontent.com/saadh393/saadh393/main/svg/github.svg"
+									alt="Software Developer Saad Hasan on Github"
+									title="Saad Hasan on Github"
+									style="max-width: 100%"
+							/></a>
+
+							<!-- Instagram Profile Link -->
+							<a
+								href="https://www.instagram.com/saadh393/"
+								title="Saad Hasan on Instagram"
+								target="_blank"
+								rel="nofollow"
+								><img
+									src="https://raw.githubusercontent.com/saadh393/saadh393/main/svg/instagram.svg"
+									alt="Software Developer Saad Hasan on Instagram"
+									title="Saad Hasan on Instagram"
+									style="max-width: 100%"
+							/></a>
+
+							<!-- Instagram Profile Link -->
+							<a href="https://medium.com/@saadh393" title="Saad Hasan on Medium" rel="nofollow">
+								<img
+									src="https://raw.githubusercontent.com/saadh393/saadh393/main/svg/medium.svg"
+									alt="Software Developer Saad Hasan on Medium"
+									title="Saad Hasan on Medium"
+									style="max-width: 100%"
+								/>
+							</a>
+
+							<!-- My Potfolio Website -->
+							<a href="https://saadh393.github.io/" title="Saad Hasan " rel="nofollow">
+								<img
+									src="https://raw.githubusercontent.com/saadh393/saadh393/main/svg/web.svg"
+									alt="Software Developer Saad Hasan"
+									title="Software Developer Saad Hasan"
+									style="max-width: 100%"
+								/>
+							</a>
+						</ul>
+					</div>
+				</article>
+			</main>
+		</section>
+
+		<script src="./script/script.js"></script>
+	</body>
+</html>
