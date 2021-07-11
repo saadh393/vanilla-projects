@@ -17,3 +17,13 @@ Github Branch - [Vanilla-Slider](https://github.com/saadh393/vanilla-projects/tr
 
 
 ------------
+
+
+#### Rich Text Editor
+Live Preview - [https://richeditor.netlify.app/](https://richeditor.netlify.app/ "https://richeditor.netlify.app/")
+Github Branch - [Rich Text Editor](https://github.com/saadh393/vanilla-projects/tree/rich-editor "Rich Text Editor")
+
+![Rich Text Editor](https://richeditor.netlify.app/screenshort.png "Rich Text Editor")
+
+
+------------
