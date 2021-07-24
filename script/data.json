@@ -1,0 +1,25 @@
+[
+  {
+    "name": "Blue Cuban Short Sleeve Shirt | The Fuji Merchant",
+    "price": "£ 129",
+    "description": "Known for their bold mastery of colour, pattern and embroidery, Hackney-born Percival's energetic reimagining of classic British shapes gives them a timeless charm. And these embroidered socks are a subtle way to express your personal style.",
+    "path": "./assets/Navy Cuban Short Sleeve Shirt/",
+    "images": ["1.png", "2.png", "3.png", "4.png"]
+  },
+
+  {
+    "name": "Blue Cuban Short Sleeve Shirt | Ukiyo-e Scene",
+    "price": "$99 USD",
+    "description": "British shapes gives them a timeless charm. Made from 100% Japanese cotton, this Cuban shirt features a bold, bright and traditional Japanese ukiyo-e scene. Completely unique in its style, it exudes the feeling of vacation",
+    "path": "./assets/Blue Cuban Short Sleeve Shirt/",
+    "images": ["1.png", "2.png", "3.png", "4.png"]
+  },
+
+  {
+    "name": "Navy Cuban Short Sleeve Shirt | Matchboxes Of Gion",
+    "price": "$110 USD",
+    "description": "Hackney-born Percival's energetic reimagining of classic British shapes gives them a timeless charm. And these embroidered socks are a subtle way to express your personal style. And these embroidered socks are a subtle way to express your personal style.",
+    "path": "./assets/Navy Nawa Knit Polo  Stripe/",
+    "images": ["1.png", "2.png", "3.png", "4.png"]
+  }
+]
