@@ -13,17 +13,18 @@ fetch('./script/data.json')
 function initial(productInfo) {
     productInfo.forEach(product => {
         createProduct(product)
-        // console.log(product)
     })
     showCase.forEach((image, index) => image.style.backgroundImage = `url("../assets/background/${index+1}.jpg")`)
     document.querySelectorAll(".img").forEach((image, index) => {
-        // if(index == counter){
-        //     image.style.transform = `translateX(500px)`
-        // }else{
-        //     image.style.transform = `translateX(${document.body.offsetWidth}px)`
-        // }
-        let calculation = (document.body.offsetWidth* index)  + document.querySelector('.sidebar').offsetWidth + (image.offsetWidth / 2)
-        image.style.transform = `translateX(${calculation}px)`
+        let calculation = 0;
+        if(document.body.offsetWidth < 601){
+            alert(true)
+            calculation = (document.body.offsetWidth / 2)   - (image.offsetWidth / 2) 
+        }else{
+            calculation = (document.body.offsetWidth* index)  + document.querySelector('.sidebar').offsetWidth + (image.offsetWidth / 2)
+        }
+
+        image.style.transform = `translateX(${calculation * (index + 1)}px)`
     })
      
 
@@ -31,23 +32,32 @@ function initial(productInfo) {
 }
 
 function next(){
+    if(counter === 2) return
     counter += 1;
     performSlideAnimation(counter, true);
 }
 
 function previous() {
+    if(counter === 0) return
     counter -= 1;
     performSlideAnimation(counter, false); 
 }
 
 function performSlideAnimation(counter, forward) {
-    document.querySelectorAll(".productName").forEach(name => name.style.transform = `translateX(-${350*counter}px)`);
-    document.querySelectorAll(".productPrice").forEach(name => name.style.transform = `translateX(-${350*counter}px)`);
-    document.querySelectorAll(".productDescription").forEach(name => name.style.transform = `translateX(-${350*counter}px)`);
-    document.querySelectorAll(".quickButton").forEach(name => name.style.transform = `translateX(-${350*counter}px)`);
+    document.querySelectorAll(".productName").forEach(name => name.style.transform = `translateX(-${450*counter}px)`);
+    document.querySelectorAll(".productPrice").forEach(name => name.style.transform = `translateX(-${450*counter}px)`);
+    document.querySelectorAll(".productDescription").forEach(name => name.style.transform = `translateX(-${450*counter}px)`);
+    document.querySelectorAll(".quickButton").forEach(name => name.style.transform = `translateX(-${450*counter}px)`);
     document.querySelectorAll(".fontImages .img").forEach((image, index) => {
         const currentTransformVal = parseInt(/translateX\((.*?)px\)/.exec(image.style.transform)[1])
-        let calculation = (document.body.offsetWidth )  + document.querySelector('.sidebar').offsetWidth + (image.offsetWidth / 3)
+        let calculation = 0;
+        if(document.body.offsetWidth < 601){
+            alert(true)
+            calculation = (document.body.offsetWidth )  - (image.offsetWidth /3 )
+        }else{
+            calculation = (document.body.offsetWidth )  + document.querySelector('.sidebar').offsetWidth + (image.offsetWidth / 3)
+        }
+
         image.style.transform = forward ? `translateX(${currentTransformVal - calculation}px)` : `translateX(${currentTransformVal + calculation}px)`        
     });
    
