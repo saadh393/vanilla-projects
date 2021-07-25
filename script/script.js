@@ -18,14 +18,18 @@ function initial(productInfo) {
     document.querySelectorAll(".img").forEach((image, index) => {
         let calculation = 0;
         if(document.body.offsetWidth < 601){
-            alert(true)
             calculation = (document.body.offsetWidth / 2)   - (image.offsetWidth / 2) 
+            image.style.transform = `translateX(${calculation * (index + 1)}px)`
         }else{
             calculation = (document.body.offsetWidth* index)  + document.querySelector('.sidebar').offsetWidth + (image.offsetWidth / 2)
+            image.style.transform = `translateX(${calculation- 100}px)`
         }
 
-        image.style.transform = `translateX(${calculation * (index + 1)}px)`
     })
+
+    setTimeout(() => {
+        document.querySelector('.preload').style.display = "none"
+    }, 1300);
      
 
     
@@ -52,7 +56,6 @@ function performSlideAnimation(counter, forward) {
         const currentTransformVal = parseInt(/translateX\((.*?)px\)/.exec(image.style.transform)[1])
         let calculation = 0;
         if(document.body.offsetWidth < 601){
-            alert(true)
             calculation = (document.body.offsetWidth )  - (image.offsetWidth /3 )
         }else{
             calculation = (document.body.offsetWidth )  + document.querySelector('.sidebar').offsetWidth + (image.offsetWidth / 3)

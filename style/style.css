@@ -34,9 +34,34 @@ body {
   top: 60px;
   z-index: 9;
 }
-.brand h2 {
+.brand h2,
+.preload h2 {
   letter-spacing: 6px;
   font-weight: 800;
+}
+
+.preload {
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  position: absolute;
+  background-color: #f0f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+  z-index: 16;
+  animation: preloadAnim 0.4s ease-in-out 1s forwards;
+}
+
+@keyframes preloadAnim {
+  to {
+    transform: scale(1.5);
+    opacity: 0;
+    display: none;
+  }
 }
 
 .back {
