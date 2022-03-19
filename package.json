@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/saadh393/vanilla-projects#readme",
   "devDependencies": {
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
     "tailwindcss": "^3.0.23"
   }
 }

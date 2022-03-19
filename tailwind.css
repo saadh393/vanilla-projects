@@ -1,3 +1,54 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .ui-holder {
+    @apply h-full md:[width:328px] md:[height:640px] md:rounded-lg overflow-hidden relative shadow-lg;
+  }
+
+  /* Navigation Drawer Section */
+  .navigation-drawer {
+    @apply z-[1] bg-sky-800 absolute w-full h-full left-0 p-4 overflow-hidden;
+  }
+
+  .nav-drawer--close-btn {
+    @apply w-8 h-8 shadow-md rounded-md border-2 border-sky-300;
+  }
+
+  .nav-drawer--profile-pic {
+    @apply w-20 h-20 rounded-full border-2 border-white my-4;
+  }
+
+  .nav-drawer--username {
+    @apply text-white font-bold text-xl;
+  }
+
+  .nav-drawer--designation {
+    @apply text-gray-300 text-sm;
+  }
+
+  .nav-drawer--menu-list {
+    @apply font-medium text-lg text-sky-100 space-y-4 my-8;
+  }
+
+  .expend {
+    @apply transform translate-x-2/4 -translate-y-10 scale-75 -rotate-12 rounded-lg ring-8 ring-blue-200 overflow-hidden;
+  }
+
+  .card-square {
+    flex: 0 0 auto;
+    @apply bg-white p-4 w-48 shadow-md border rounded-md;
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
