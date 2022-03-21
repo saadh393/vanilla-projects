@@ -5,16 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>App Drawer | Vanilla Project</title>
+    <meta property="og:title" content="App Drawer Animation - Saad Hasan" />
+    <meta
+      property="og:og:description"
+      content="App Drawer with Cool animation. This site is designed with only Raw HTML, CSS and Vanilla JavaScript."
+    />
+    <meta property="og:image" content="https://imageupload-saadh393.netlify.app/images/meta.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:alt" content="App Drawer - Saad Hasan" />
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
-  <body class="md:grid md:place-items-center md:h-screen md:bg-[#9eb3ff]">
+  <body class="md:grid md:place-items-center md:h-screen md:bg-blue-400">
     <!-- UI Holder -->
     <section class="ui-holder">
       <!-- Navigation Drawer hiding in the background -->
       <section class="navigation-drawer">
         <!-- Navigation Close Button -->
-        <button onclick="expand()" class="nav-drawer--close-btn">
+        <button onclick="expand()" class="nav-drawer--close-btn" aria-label="Humburger">
           <i class="fas fa-times text-sky-400"></i>
         </button>
         <img
@@ -37,169 +48,171 @@
       </section>
       <!-- Navigation Drawer End -->
 
-      <!-- App Screen -->
-      <section class="z-[2] bg-blue-500 relative transition-all h-full pb-8 overflow-clip" id="app-screen">
+      <!-- App Screen Container -->
+      <section class="app-container" id="app-screen">
         <!-- App Actionbar -->
-        <nav class="md:rounded-lg fixed z-10 bg-blue-500 w-full md:w-[328px] py-4 text-white flex items-baseline gap-4">
-          <button class="px-4 text-white" onclick="expand()"><i class="fas fa-bars"></i></button>
-          <h2 class="font-bold text-lg text-center">Find Your Dream Job</h2>
+        <nav class="app-container--actionbar">
+          <button class="app-container--hamburger" onclick="expand()">
+            <i class="fas fa-bars" aria-label="Humburger"></i>
+          </button>
+          <h2 class="app-container--title">Find Your Dream Job</h2>
         </nav>
 
         <!-- App Content -->
-        <div class="relative z-[5] top-16 bg-gray-100 h-full drop-shadow-lg px-4 overflow-y-scroll pb-16 rounded-xl">
-          <h4 class="mt-4 text-lg font-medium text-gray-800">Match Your Profile</h4>
+        <div class="app-content">
+          <h4 class="app-content--title">Match Your Profile</h4>
           <!-- Horizental List of Matched Profile Card Items -->
-          <div class="flex flex-nowrap overflow-auto gap-x-5 py-5" id="matched-profile">
+          <div class="app-content--horizental-cards" id="matched-profile">
             <!-- Item - 1 -->
-            <div class="card-square">
-              <img class="w-20 h-w-20 object-cover" src="./images/tokopedia.png" alt="" />
-              <small class="text-gray-600 font-medium">Tokopedia</small>
-              <h3 class="text-gray-900 font-bold text-xl">UI Designer</h3>
-              <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+            <div class="app-content--card-square">
+              <img class="app-content--card-logo" src="./images/tokopedia.png" alt="" />
+              <small class="app-content--card-title">Tokopedia</small>
+              <h3 class="app-content--card-designation">UI Designer</h3>
+              <ul class="app-content--card-details">
                 <li>Entry Level</li>
                 <li>Full Time</li>
               </ul>
             </div>
 
             <!-- Item - 3 -->
-            <div class="card-square">
-              <img class="w-20 h-w-20 object-cover" src="./images/WorkNest.jpg" alt="" />
-              <small class="text-gray-600 font-medium">WorkNest</small>
-              <h3 class="text-gray-900 font-bold text-xl">UI/UX Designer</h3>
-              <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+            <div class="app-content--card-square">
+              <img class="app-content--card-logo" src="./images/WorkNest.jpg" alt="" />
+              <small class="app-content--card-title">WorkNest</small>
+              <h3 class="app-content--card-designation">UI/UX Designer</h3>
+              <ul class="app-content--card-details">
                 <li>Entry Level</li>
                 <li>Full Time</li>
               </ul>
             </div>
 
             <!-- Item - 4 -->
-            <div class="card-square">
-              <img class="w-20 h-w-20 object-cover" src="./images/Toptal.png" alt="" />
-              <small class="text-gray-600 font-medium">Toptal</small>
-              <h3 class="text-gray-900 font-bold text-xl">UI Designer</h3>
-              <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+            <div class="app-content--card-square">
+              <img class="app-content--card-logo" src="./images/Toptal.png" alt="" />
+              <small class="app-content--card-title">Toptal</small>
+              <h3 class="app-content--card-designation">UI Designer</h3>
+              <ul class="app-content--card-details">
                 <li>Entry Level</li>
                 <li>Full Time</li>
               </ul>
             </div>
           </div>
 
-          <h4 class="py-3 text-lg font-medium text-gray-800">Job You Have Saved</h4>
+          <h4 class="app-content--saved-title">Job You Have Saved</h4>
           <div class="space-y-5">
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/TEKsystems.png" alt="" />
               <div>
-                <small class="text-gray-600">TekSystem</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">TekSystem</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
               </div>
             </div>
 
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/tokopedia.png" alt="" />
               <div>
-                <small class="text-gray-600">Tokopedia</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">Tokopedia</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
               </div>
             </div>
 
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/WorkNest.jpg" alt="" />
               <div>
-                <small class="text-gray-600">Toptal</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">Toptal</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
               </div>
             </div>
 
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/Dice.svg" alt="" />
               <div>
-                <small class="text-gray-600">Dice</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">Dice</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
               </div>
             </div>
 
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/Toptal.png" alt="" />
               <div>
-                <small class="text-gray-600">Toptal.png</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">Toptal.png</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
               </div>
             </div>
 
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/TEKsystems.png" alt="" />
               <div>
-                <small class="text-gray-600">TekSystem</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">TekSystem</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
               </div>
             </div>
 
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/tokopedia.png" alt="" />
               <div>
-                <small class="text-gray-600">Tokopedia</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">Tokopedia</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
               </div>
             </div>
 
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/WorkNest.jpg" alt="" />
               <div>
-                <small class="text-gray-600">Toptal</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">Toptal</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
               </div>
             </div>
 
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/Dice.svg" alt="" />
               <div>
-                <small class="text-gray-600">Dice</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">Dice</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
               </div>
             </div>
 
-            <div class="flex items-center gap-4 bg-white rounded-md shadow-md p-2">
+            <div class="app-content--savedCard">
               <img class="w-14 h-14" src="./images/Toptal.png" alt="" />
               <div>
-                <small class="text-gray-600">Toptal.png</small>
-                <h3 class="text-gray-900 font-bold text-lg">Senior UI Designer</h3>
-                <ul class="flex text-xs gap-4 text-gray-500 pb-2">
+                <small class="app-content--savedCard-title">Toptal.png</small>
+                <h3 class="app-content--savedCard-designation">Senior UI Designer</h3>
+                <ul class="app-content--savedCard-items">
                   <li>Entry Level</li>
                   <li>Full Time</li>
                 </ul>
@@ -210,10 +223,12 @@
       </section>
 
       <script>
+        // toggle navigation drawer
         function expand() {
           document.querySelector("#app-screen").classList.toggle("expend");
         }
 
+        // Horizental Scroll for web
         document.querySelector("#matched-profile").addEventListener("wheel", function (e) {
           e.preventDefault();
           const container = document.querySelector("#matched-profile");

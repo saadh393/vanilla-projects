@@ -32,13 +32,81 @@
     @apply font-medium text-lg text-sky-100 space-y-4 my-8;
   }
 
-  .expend {
-    @apply transform translate-x-2/4 -translate-y-10 scale-75 -rotate-12 rounded-lg ring-8 ring-blue-200 overflow-hidden;
+  /* App Screen */
+  .app-container {
+    @apply z-[2] bg-blue-500 relative transition-all h-full pb-8 overflow-clip;
   }
 
-  .card-square {
+  .app-container--actionbar {
+    @apply md:rounded-lg fixed z-10 bg-blue-500 w-full md:w-[328px] py-4 text-white flex items-baseline gap-4;
+  }
+
+  .app-container--hamburger {
+    @apply px-4 text-white;
+  }
+  .app-container--title {
+    @apply font-bold text-lg text-center;
+  }
+
+  .app-content {
+    @apply relative z-[5] top-16 bg-gray-100 h-full drop-shadow-lg px-4 overflow-y-scroll pb-16 rounded-xl;
+  }
+
+  .app-content--title {
+    @apply mt-4 text-lg font-medium text-gray-800;
+  }
+
+  .app-content--horizental-cards {
+    @apply flex flex-nowrap overflow-auto gap-x-5 py-5;
+  }
+
+  .app-content--card-square {
     flex: 0 0 auto;
     @apply bg-white p-4 w-48 shadow-md border rounded-md;
+  }
+
+  .app-content--card-logo {
+    @apply w-20 h-20 object-cover;
+  }
+
+  .app-content--card-title {
+    @apply text-gray-600 font-medium;
+  }
+
+  .app-content--card-designation {
+    @apply text-gray-900 font-bold text-xl;
+  }
+
+  .app-content--card-details {
+    @apply flex text-xs gap-4 text-gray-500 pb-2;
+  }
+
+  .app-content--saved-title {
+    @apply py-3 text-lg font-medium text-gray-800;
+  }
+
+  .app-content--savedCard {
+    @apply flex items-center gap-4 bg-white rounded-md shadow-md p-2;
+  }
+
+  .app-content--savedCard-title {
+    @apply text-gray-600;
+  }
+
+  .app-content--savedCard-designation {
+    @apply text-gray-900 font-bold text-lg;
+  }
+
+  .app-content--savedCard-designation {
+    @apply text-gray-900 font-bold text-lg;
+  }
+
+  .app-content--savedCard-items {
+    @apply flex text-xs gap-4 text-gray-500 pb-2;
+  }
+
+  .expend {
+    @apply transform translate-x-2/4 -translate-y-10 scale-75 -rotate-12 rounded-lg ring-8 ring-blue-200 overflow-hidden;
   }
 }
 
